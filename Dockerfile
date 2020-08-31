@@ -1,5 +1,9 @@
 FROM node:12-alpine
-MAINTAINER furiousgeorge <furiousgeorgecode@gmail.com>
+
+ARG BUILD_DATE
+ARG VERSION
+LABEL build_date="${BUILD_DATE}"
+LABEL version="${VERSION}"
 
 RUN apk --update add g++ make python python-dev git \
     && git clone http://github.com/matterwiki/matterwiki /matterwiki \
